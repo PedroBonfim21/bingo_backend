@@ -43,6 +43,9 @@ class MarkNumberRequest(BaseModel):
     user_name: str
     room_code: str
     number: int
+@app.get("/")
+async def read_root():
+    return {"message": "API is running!"}
 
 @app.post("/create_game")
 async def create_game(request: CreateGameRequest):
